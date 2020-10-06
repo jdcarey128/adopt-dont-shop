@@ -4,4 +4,7 @@ class SheltersController < ApplicationController
     @shelters = ["shelter 1", "shelter 2"]
   end
 
+  def new
+  end 
+
 end

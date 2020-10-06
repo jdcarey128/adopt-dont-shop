@@ -4,6 +4,9 @@
 
 <ul>
   <% @shelters.each do |shelter| %>
-    <li><%= shelter.capitalize %></li>
+    <li><a href="/shelters"><%= shelter.capitalize %></a></li>
   <% end %>
 </ul>
+
+<br>
+<button><a href="/shelters/new">New Shelter</a></button>
