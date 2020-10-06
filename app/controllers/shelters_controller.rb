@@ -1,7 +1,7 @@
 class SheltersController < ApplicationController
 
   def index
-    @shelters = ["shelter 1", "shelter 2"]
+    @shelters = Shelter.all
   end
 
   def new
@@ -15,7 +15,7 @@ class SheltersController < ApplicationController
       state: params[:shelter][:state],
       zip: params[:shelter][:zip],
       })
-      
+
     shelter.save
 
     redirect_to '/shelters'
