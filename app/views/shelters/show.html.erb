@@ -5,6 +5,9 @@
   <li>Name: <%= @shelter.name %></li>
   <li>Address: <%= @shelter.address %></li>
   <li>City/State/zip: <%= @shelter.city %> <%= @shelter.state %>, <%= @shelter.zip %></li>
+  <br><button><a href="/shelters/<%= @shelter.id %>/edit">Update Shelter</a></button>
 </ul>
 
-<footer><a href='/shelters'>Shelters</a></footer>
+<br>
+
+<footer><a href='/shelters'>Shelters Index</a></footer>
