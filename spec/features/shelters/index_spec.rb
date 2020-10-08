@@ -14,5 +14,12 @@ describe "As a user" do
       expect(page).to have_link("New Shelter")
     end
 
+    xit "the user is routed to '/shelters/new' when they click on the 'New Shelter' link" do
+      visit '/shelters'
+
+      click_link("New Shelter")
+      expect('/shelters').to eq('/shelters/new')
+    end
+
   end
 end
