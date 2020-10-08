@@ -14,6 +14,7 @@ describe "As a user" do
       fill_in "shelter[city]", with: "Denver"
 
       # find('form["name=update"]').click
+      click_button("Update Shelter")
 
       # expect(click_button "Update Shelter").to route_to("/shelters/#{shelter_1.id}")
       expect(page).to have_content("Shelter ID: #{shelter_1.id}")

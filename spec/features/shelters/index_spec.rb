@@ -17,8 +17,7 @@ describe "As a user" do
     xit "the user is routed to '/shelters/new' when they click on the 'New Shelter' link" do
       visit '/shelters'
 
-      click_link("New Shelter")
-      expect('/shelters').to eq('/shelters/new')
+      expect(click_link("New Shelter")).to eq('/shelters/new')
     end
 
   end

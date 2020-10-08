@@ -13,15 +13,14 @@ describe "As a user" do
       expect(page).to have_content(shelter_1.city)
       expect(page).to have_content(shelter_1.state)
       expect(page).to have_content(shelter_1.zip)
-
-      # how do you check form inputs?
-      # expect(page).to have_input("Update Shelter")
+      expect(page).to have_button("Update Shelter")
     end
 
     xit "the user is taken to '/shelters/:id/edit' when they click 'Update Shelter'" do
       shelter_1 = Shelter.create(name: "Colorado Cares", address: "867 magnolia st", city: "Lakewood", state: "CO", zip: "80022")
       visit "/shelters/#{shelter_1.id}"
 
+      #expected location "/shelters/#{shelter_1.id}/edit"
       #how to click on form inputs??
       #how to check something is routing correctly?
 
