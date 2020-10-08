@@ -12,5 +12,11 @@ describe "As a user" do
       expect(page).to have_content("State")
       expect(page).to have_content("Zip")
     end
+
+    xit "the user submits a new form and sees the new shelter on '/shelters'" do
+
+    end
+
+     
   end
 end
