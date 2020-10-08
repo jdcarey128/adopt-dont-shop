@@ -1,14 +1,15 @@
 <h2><%= @shelter.name.upcase %></h2>
 
 <ul>
-  <li>Shelter ID: <%= @shelter.id %></li>
   <li>Name: <%= @shelter.name %></li>
   <li>Address: <%= @shelter.address %></li>
   <li>City/State/zip: <%= @shelter.city %>, <%= @shelter.state %> <%= @shelter.zip %></li><br>
+
   <form name="update" action="/shelters/<%= @shelter.id %>/edit" method="GET">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <input type="submit" value="Update Shelter"/>
   </form><br>
+
   <form name="delete" action="/shelters/<%= @shelter.id %>" method="POST">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <input type="hidden" name="_method" value="DELETE">
@@ -18,4 +19,4 @@
 
 <br>
 
-<footer><a href='/shelters'>Shelters Index</a></footer>
+<a href='/shelters'>Shelters Index</a>
