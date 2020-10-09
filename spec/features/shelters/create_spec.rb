@@ -33,8 +33,9 @@ describe "As a user" do
       fill_in "shelter[zip]", with: "80219"
 
       click_button("Create Shelter")
+      expect(current_path).to eq('/shelters')
       expect(page).to have_content("Mile High Cares")
-      
+
     end
 
 
