@@ -16,14 +16,14 @@ describe "As a user" do
       expect(page).to have_button("Update Shelter")
     end
 
-    xit "the user is taken to '/shelters/:id/edit' when they click 'Update Shelter'" do
+    it "the user is taken to '/shelters/:id/edit' when they click 'Update Shelter'" do
       shelter_1 = Shelter.create(name: "Colorado Cares", address: "867 magnolia st", city: "Lakewood", state: "CO", zip: "80022")
       visit "/shelters/#{shelter_1.id}"
 
-      #expected location "/shelters/#{shelter_1.id}/edit"
-      #how to click on form inputs??
-      #how to check something is routing correctly?
-
+      click_button("Update Shelter")
+      expect(current_path).to eq("/shelters/#{shelter_1.id}/edit")
+      # below looks at url params
+      # expect(page).to have_current_path("/shelters/#{shelter_1.id}/edit")
     end
 
   end
