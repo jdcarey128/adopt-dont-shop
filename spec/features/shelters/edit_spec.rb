@@ -16,7 +16,7 @@ describe "As a user" do
       expect(find_field("shelter[zip]").value).to eq(shelter_1.zip)
     end
 
-    it "the user is redirected to the 'shelters/:id' page and sees the updated information" do
+    it "the user is redirected to the 'shelters/:id' page when they click 'Update Shelter' and sees the updated information" do
       shelter_1 = Shelter.create(name: "Colorado Cares", address: "867 magnolia st", city: "Lakewood", state: "CO", zip: "80022")
 
       visit "/shelters/#{shelter_1.id}/edit"
