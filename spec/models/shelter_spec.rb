@@ -5,7 +5,4 @@ RSpec.describe Shelter do
     it {should validate_presence_of :name}
   end
 
-  # describe 'relationships' do
-  # end
-
 end
