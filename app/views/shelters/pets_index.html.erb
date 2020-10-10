@@ -1,11 +1,14 @@
 <%= link_to "Home", '/' %><br><br>
 
-<h2>Pets:</h2>
+<%= link_to "Create Pet", "/shelters/#{params[:shelter_id]}/pets/new" %>
+
+<h2>Pets At This Shelter</h2>
 
 <% @pets.each do |pet| %>
   <div class= <% "pet_#{pet.id}" %>>
     <img src= <%= "#{pet.image}"%> alt= <%= "#pet.name" %> width="300px"><br>
     <%= "Name: " + pet.name %><br>
+    <%= "Description: " + pet.description %><br>
     <%= "Approximate age: " + pet.approximate_age %><br>
     <%= "Sex: " + pet.sex %><br>
     <%= "Shelter: " + pet.shelter.name %>
