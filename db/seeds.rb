@@ -8,6 +8,7 @@
 
 shelter_1 = Shelter.create(name: "Rocky Mountain High", address: "1234 fake st.", city: "Denver", state: "CO", zip: "45505")
 shelter_2 = Shelter.create(name: "Colorado Cares", address: "867 magnolia st", city: "Lakewood", state: "CO", zip: "80022")
+shelter_3 = Shelter.create(name: "Mile High Adoptive Services", address: "500 w first st", city: "Centennial", state: "CO", zip: "80022")
 pet_1 = shelter_1.pets.create(image: "https://dogtime.com/assets/uploads/gallery/austalian-shepherd-dog-breed-pictures/10-threequarters.jpg",
                   name: "Tony",
                   approximate_age: "2",
@@ -18,3 +19,18 @@ pet_2 = shelter_2.pets.create(image: "https://dogtime.com/assets/uploads/gallery
                               approximate_age: "5",
                               sex: "female",
                               description: "Isabell is my favorite and I don't want her to go...but then again, I do!")
+pet_3 = shelter_3.pets.create(image: "https://dogtime.com/assets/uploads/gallery/akita-dogs-and-puppies/akita-dogs-puppies-2.jpg",
+                              name: "Snowball",
+                              approximate_age: "1",
+                              sex: "female",
+                              description: "Just the cutest.")
+pet_4 = shelter_2.pets.create(image: "https://dogtime.com/assets/uploads/gallery/golden-retriever-dogs-and-puppies/golden-retriever-dogs-puppies-10.jpg",
+                              name: "Watson",
+                              approximate_age: "3",
+                              sex: "male",
+                              description: "He may look dumb, and he is.")
+pet_5 = shelter_1.pets.create(image: "https://dogtime.com/assets/uploads/gallery/belgain-malinois-dog-breed-pictures/8-senior.jpg",
+                              name: "Uma",
+                              approximate_age: "4",
+                              sex: "female",
+                              description: "Don't let her beauty fool ya, she's a stone-cold killer.")
