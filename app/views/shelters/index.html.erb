@@ -3,7 +3,10 @@
 
 <% @shelters.each do |shelter| %>
   <div id="shelter_<%= shelter.id %>"> <%= link_to shelter[:name], "/shelters/#{shelter.id}" %>
-  <%= link_to "edit shelter", "/shelters/#{shelter.id}/edit" %></div><br>
+  <ul>
+    <li><%= link_to "edit shelter", "/shelters/#{shelter.id}/edit" %></li>
+    <li><%= button_to "delete shelter", "/shelters/#{shelter.id}", method: :delete %></li>
+  </ul></div><br>
 <% end %><br>
 
 
