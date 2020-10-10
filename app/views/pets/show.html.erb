@@ -1,7 +1,8 @@
 <h2><%= @pet.name %></h2>
 
 <img src= <%= "#{@pet.image}"%> alt= <%= "#@pet.name" %> width="300px"><br>
+<%= "Description: " + @pet.description %><br>
 <%= "Approximate age: " + @pet.approximate_age %><br>
 <%= "Sex: " + @pet.sex %><br>
-<%= "Shelter: " + @pet.shelter.name %>
-<%= "Adoption status: " + PetsController.adoption_status(@pet.adoption_status) %>
+<%= "Shelter: " + @pet.shelter.name %><br>
+<%= "Adoption status: " + @pet.adoption_status%>
