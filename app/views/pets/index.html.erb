@@ -3,11 +3,13 @@
 <h2>Pets:</h2>
 
 <% @pets.each do |pet| %>
-  <div class= <% "pet_#{pet.id}" %>>
+  <div id="pet_<%= pet.id %>">
     <img src= <%= "#{pet.image}"%> alt= <%= "#pet.name" %> width="300px"><br>
     <%= "Name: " + pet.name %><br>
     <%= "Approximate age: " + pet.approximate_age %><br>
     <%= "Sex: " + pet.sex %><br>
-    <%= "Shelter: " + pet.shelter.name %>
+    <%= "Shelter: " + pet.shelter.name %><br>
+    <%= link_to "edit pet", "/pets/#{pet.id}/edit" %><br>
+    <%= link_to "delete pet", "/pets/#{pet.id}", method: :delete %>
   </div><br><br>
 <% end %>

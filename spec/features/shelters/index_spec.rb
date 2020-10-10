@@ -52,8 +52,8 @@ describe "As a user" do
         visit "/shelters"
 
         within("#shelter_#{shelter_1.id}") do
-          expect(page).to have_button("delete shelter")
-          click_button("delete shelter")
+          expect(page).to have_link("delete shelter")
+          click_link("delete shelter")
           expect(current_path).to eq("/shelters")
         end
 
@@ -62,8 +62,8 @@ describe "As a user" do
         visit "/shelters"
 
         within("#shelter_#{shelter_2.id}") do
-          expect(page).to have_button("delete shelter")
-          click_button("delete shelter")
+          expect(page).to have_link("delete shelter")
+          click_link("delete shelter")
           expect(current_path).to eq("/shelters")
         end
 
