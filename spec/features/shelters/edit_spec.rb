@@ -7,8 +7,6 @@ describe "As a user" do
 
       visit "/shelters/#{shelter_1.id}/edit"
 
-      save_and_open_page
-
       expect(find_field("shelter[name]").value).to eq(shelter_1.name)
       expect(find_field("shelter[address]").value).to eq(shelter_1.address)
       expect(find_field("shelter[city]").value).to eq(shelter_1.city)

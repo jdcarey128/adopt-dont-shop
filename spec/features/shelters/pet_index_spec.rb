@@ -8,11 +8,13 @@ RSpec.describe "As a user" do
       pet_1 = shelter_1.pets.create(image: "https://dogtime.com/assets/uploads/gallery/austalian-shepherd-dog-breed-pictures/10-threequarters.jpg",
                         name: "Tony",
                         approximate_age: "2",
-                        sex: "male")
+                        sex: "male",
+                        adoption_status: "adoptable")
       pet_2 = shelter_2.pets.create(image: "https://dogtime.com/assets/uploads/gallery/german-shorthaired-pointer-dogs-and-puppies/german-shorthaired-pointer-dogs-puppies-3.jpg",
                                     name: "Isabell",
                                     approximate_age: "5",
-                                    sex: "female")
+                                    sex: "female",
+                                    adoption_status: "adoptable")
       visit "/shelters/#{shelter_1.id}/pets"
 
       expect(page).to have_xpath("//img[contains(@src, '#{pet_1.image}')]")
