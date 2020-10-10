@@ -25,7 +25,7 @@ RSpec.describe "As a user" do
       fill_in "sex", with: "female"
 
       click_button("Update Pet")
-      expect(current_path).to eq("/pets/#{pet_1.id}")
+      expect(current_path).to eq("/pets")
 
       expect(page).to have_content("Rebecca")
       expect(page).to_not have_content("Tony")
