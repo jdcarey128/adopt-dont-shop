@@ -17,31 +17,31 @@ RSpec.describe "As a visitor" do
 
       expect(current_path).to eq("/shelters/#{shelter_1.id}/pets/new")
 
-      expect(page).to have_content("image")
+      expect(page).to have_content("Image")
       expect(find_field("image").value).to eq(nil)
 
-      expect(page).to have_content("name")
+      expect(page).to have_content("Name")
       expect(find_field("name").value).to eq(nil)
 
-      expect(page).to have_content("description")
+      expect(page).to have_content("Description")
       expect(find_field("description").value).to eq(nil)
 
-      expect(page).to have_content("approximate age")
-      expect(find_field("approximate age").value).to eq(nil)
+      expect(page).to have_content("Approximate age")
+      expect(find_field("approximate_age").value).to eq(nil)
 
-      expect(page).to have_content("sex")
+      expect(page).to have_content("Sex (female or male)")
       expect(find_field("sex").value).to eq(nil)
 
       fill_in "image", with: "https://dogtime.com/assets/uploads/gallery/golden-retriever-dogs-and-puppies/golden-retriever-dogs-puppies-10.jpg"
       fill_in "name", with: "Rover"
       fill_in "description", with: "Cute golden retriever with lots of energy!"
-      fill_in "approximate age", with: "3"
+      fill_in "approximate_age", with: "3"
       fill_in "sex", with: "male"
 
       click_on("Create Pet")
       expect(current_path).to eq("/shelters/#{shelter_1.id}/pets")
 
-      expect(page).to have_xpath("//img[contains(@src, https://dogtime.com/assets/uploads/gallery/golden-retriever-dogs-and-puppies/golden-retriever-dogs-puppies-10.jpg)]")
+      expect(page).to have_xpath("//img[contains(@src, 'https://dogtime.com/assets/uploads/gallery/golden-retriever-dogs-and-puppies/golden-retriever-dogs-puppies-10.jpg')]")
       expect(page).to have_content("Rover")
       expect(page).to have_content("Cute golden retriever with lots of energy!")
       expect(page).to have_content("3")
