@@ -34,7 +34,7 @@ RSpec.describe "As a user" do
       # end
     end
 
-    it "I can access the '/shelters/:shelter_id' webpage" do
+    it "I can access the '/shelters/:shelter_id' webpage by clicking the shelter's name" do
       shelter_1 = Shelter.create(name: "Colorado Cares", address: "867 magnolia st", city: "Lakewood", state: "CO", zip: "80022")
       pet_1 = shelter_1.pets.create(image: "https://dogtime.com/assets/uploads/gallery/austalian-shepherd-dog-breed-pictures/10-threequarters.jpg",
                         name: "Tony",
@@ -44,6 +44,18 @@ RSpec.describe "As a user" do
       visit "/pets"
       click_on "#{shelter_1.name}"
       expect(current_path).to eq("/shelters/#{shelter_1.id}")
+    end
+
+    it "I can access the '/pets/:pet_id webpage by clicking the pet's name" do
+      shelter_1 = Shelter.create(name: "Colorado Cares", address: "867 magnolia st", city: "Lakewood", state: "CO", zip: "80022")
+      pet_1 = shelter_1.pets.create(image: "https://dogtime.com/assets/uploads/gallery/austalian-shepherd-dog-breed-pictures/10-threequarters.jpg",
+                        name: "Tony",
+                        approximate_age: "2",
+                        sex: "male",
+                        description: "He is just adorable!")
+      visit "/pets"
+      click_on "#{pet_1.name}"
+      expect(current_path).to eq("/pets/#{pet_1.id}")
     end
 
     describe "user story 15/16" do
