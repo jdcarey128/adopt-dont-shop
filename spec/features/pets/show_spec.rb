@@ -43,5 +43,33 @@ RSpec.describe "As a visitor" do
       expect(page).to_not have_content(pet_1.sex, exact:true)
       expect(page).to_not have_content("adoptable")
     end
+
+    it "I can delete a pet" do
+      shelter_1 = Shelter.create(name: "Colorado Cares", address: "867 magnolia st", city: "Lakewood", state: "CO", zip: "80022")
+      pet_1 = shelter_1.pets.create(image: "https://dogtime.com/assets/uploads/gallery/austalian-shepherd-dog-breed-pictures/10-threequarters.jpg",
+                        name: "Tony",
+                        approximate_age: "2",
+                        sex: "male",
+                        description: "My favorite.")
+      pet_2 = shelter_1.pets.create(image: "https://dogtime.com/assets/uploads/gallery/german-shorthaired-pointer-dogs-and-puppies/german-shorthaired-pointer-dogs-puppies-3.jpg",
+                                    name: "Isabell",
+                                    approximate_age: "5",
+                                    sex: "female",
+                                    description: "Going, going, gone!",
+                                    adoption_status: "pending")
+      visit "/pets/#{pet_2.id}"
+
+      expect(page).to have_link("Delete Pet")
+
+      click_link("Delete Pet")
+      expect(current_path).to eq("/pets")
+      expect(page).to have_content("Tony")
+      expect(page).to have_content("2")
+      expect(page).to have_content("male")
+
+      expect(page).to_not have_content("Isabell")
+      expect(page).to_not have_content("5")
+      expect(page).to_not have_content("female")
+    end
   end
 end
