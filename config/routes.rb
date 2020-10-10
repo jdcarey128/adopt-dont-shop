@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   patch '/shelters/:id', to: 'shelters#update'
   delete '/shelters/:id', to: 'shelters#destroy'
   get '/shelters/:shelter_id/pets', to: 'shelters#pets_index'
+  get '/pets/:pet_id', to: 'pets#show'
 end
