@@ -8,11 +8,12 @@ RSpec.describe "As a visitor" do
                         name: "Tony",
                         approximate_age: "2",
                         sex: "male",
-                        adoption_status: "adoptable")
+                        description: "My favorite.")
       pet_2 = shelter_1.pets.create(image: "https://dogtime.com/assets/uploads/gallery/german-shorthaired-pointer-dogs-and-puppies/german-shorthaired-pointer-dogs-puppies-3.jpg",
                                     name: "Isabell",
                                     approximate_age: "5",
                                     sex: "female",
+                                    description: "Going, going, gone!",
                                     adoption_status: "pending")
       visit "/pets/#{pet_1.id}"
 

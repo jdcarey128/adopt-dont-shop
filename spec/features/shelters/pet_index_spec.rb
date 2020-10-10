@@ -9,12 +9,12 @@ RSpec.describe "As a user" do
                         name: "Tony",
                         approximate_age: "2",
                         sex: "male",
-                        adoption_status: "adoptable")
+                        description: "Pretty cute as far as dogs go.")
       pet_2 = shelter_2.pets.create(image: "https://dogtime.com/assets/uploads/gallery/german-shorthaired-pointer-dogs-and-puppies/german-shorthaired-pointer-dogs-puppies-3.jpg",
                                     name: "Isabell",
                                     approximate_age: "5",
                                     sex: "female",
-                                    adoption_status: "adoptable")
+                                    description: "Pretty cute as far as dogs go.")
       visit "/shelters/#{shelter_1.id}/pets"
 
       expect(page).to have_xpath("//img[contains(@src, '#{pet_1.image}')]")
