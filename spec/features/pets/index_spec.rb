@@ -15,19 +15,19 @@ RSpec.describe "As a user" do
                                     sex: "female")
       visit '/pets'
 
-      within(".#{pet_1.id}") do
+      # within(".pet_#{pet_1.id}") do
         expect(page).to have_xpath("//img[contains(@src, '#{pet_1.image}')]")
         expect(page).to have_content(pet_1.name)
-        expect(page).to have_content(pet_1.age)
+        expect(page).to have_content(pet_1.approximate_age)
         expect(page).to have_content(pet_1.sex)
-      end
-      
-      within(".#{pet_2.id}") do
+      # end
+
+      # within(".pet_#{pet_2.id}") do
         expect(page).to have_xpath("//img[contains(@src, '#{pet_2.image}')]")
         expect(page).to have_content(pet_2.name)
-        expect(page).to have_content(pet_2.age)
+        expect(page).to have_content(pet_2.approximate_age)
         expect(page).to have_content(pet_2.sex)
-      end
+      # end
 
     end
   end

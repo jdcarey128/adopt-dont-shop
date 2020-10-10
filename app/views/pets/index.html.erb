@@ -1,9 +1,13 @@
 <h1>Pets:</h1>
 
-<header><a href='/'>Home</a></header>
+<%= link_to "Home", '/' %>
 
-<ul>
-  <% @pets.each do |pet| %>
-    <li><%= pet.capitalize %></li>
-    <% end %>
-</ul>
+<% @pets.each do |pet| %>
+  <div class= <% "pet_#{pet.id}" %>>
+    <img src= <%= "#{pet.image}"%> alt= <%= "#pet.name" %>>
+    <%= pet.name %>
+    <%= pet.approximate_age %>
+    <%= pet.sex %>
+    <%= pet.shelter %>
+  </div><br><br>
+<% end %>
