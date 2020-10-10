@@ -13,5 +13,6 @@
     <%= "Sex: " + pet.sex %><br>
     <%= "Shelter: " + pet.shelter.name %><br>
     <%= link_to "edit pet", "/shelters/#{pet.shelter_id}/pets/#{pet.id}/edit" %><br>
+    <%= link_to "delete pet", "/shelters/#{pet.shelter_id}/pets?pet_id=#{pet.id}", method: :delete %>
   </div><br><br>
 <% end %>
