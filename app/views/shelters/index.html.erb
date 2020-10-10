@@ -1,10 +1,10 @@
+<%= link_to "Home", '/' %><br><br>
 <h2>Shelters</h2>
-<%= link_to "Home", '/' %>
 
-<ul>
-  <% @shelters.each do |shelter| %>
-    <li> <%= link_to shelter[:name], "/shelters/#{shelter.id}" %></li>
-  <% end %>
-</ul><br>
+<% @shelters.each do |shelter| %>
+  <div id="shelter_<%= shelter.id %>"> <%= link_to shelter[:name], "/shelters/#{shelter.id}" %>
+  <%= link_to "edit shelter", "/shelters/#{shelter.id}/edit" %></div><br>
+<% end %><br>
+
 
 <%= link_to "New Shelter", '/shelters/new' %>
