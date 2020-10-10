@@ -31,16 +31,29 @@ describe "As a user" do
         within("#shelter_#{shelter_1.id}") do
           expect(page).to have_link("edit shelter")
           click_link("edit shelter")
-          expect(current_path).to eq("/shelters/#{shelter_1.id}/edit")
         end
+
+        expect(current_path).to eq("/shelters/#{shelter_1.id}/edit")
+        expect(find_field("shelter[name]").value).to eq(shelter_1.name)
+        expect(find_field("shelter[address]").value).to eq(shelter_1.address)
+        expect(find_field("shelter[city]").value).to eq(shelter_1.city)
+        expect(find_field("shelter[state]").value).to eq(shelter_1.state)
+        expect(find_field("shelter[zip]").value).to eq(shelter_1.zip)
 
         visit "/shelters"
 
         within("#shelter_#{shelter_2.id}") do
           expect(page).to have_link("edit shelter")
           click_link("edit shelter")
-          expect(current_path).to eq("/shelters/#{shelter_2.id}/edit")
         end
+
+        expect(current_path).to eq("/shelters/#{shelter_2.id}/edit")
+        expect(find_field("shelter[name]").value).to eq(shelter_2.name)
+        expect(find_field("shelter[address]").value).to eq(shelter_2.address)
+        expect(find_field("shelter[city]").value).to eq(shelter_2.city)
+        expect(find_field("shelter[state]").value).to eq(shelter_2.state)
+        expect(find_field("shelter[zip]").value).to eq(shelter_2.zip)
+
       end
     end
 
