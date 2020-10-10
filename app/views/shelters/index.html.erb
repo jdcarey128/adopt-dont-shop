@@ -1,12 +1,10 @@
-<h1>Shelters:</h1>
-
-<header><a href='/'>Home</a></header>
+<h2>Shelters</h2>
+<%= link_to "Home", '/' %>
 
 <ul>
   <% @shelters.each do |shelter| %>
-    <li><a href="/shelters/<%= shelter[:id] %>"><%= shelter[:name] %></a></li>
+    <li> <%= link_to shelter[:name], "/shelters/#{shelter.id}" %></li>
   <% end %>
-</ul>
+</ul><br>
 
-<br>
-<button><a href="/shelters/new">New Shelter</a></button>
+<%= link_to "New Shelter", '/shelters/new' %>
