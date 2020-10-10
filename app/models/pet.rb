@@ -8,7 +8,7 @@ class Pet < ApplicationRecord
   validates_presence_of :adoption_status
 
   def init
-    self.description ||= "This pet does not have a description."
+    self.adoption_status ||= "adoptable"
   end
 
 end
