@@ -171,5 +171,31 @@ RSpec.describe "As a user" do
       end
     end
 
+    describe "user story 23" do
+      it "I can see the count of the number of pets at this shelter" do
+        shelter_1 = Shelter.create(name: "Colorado Cares", address: "867 magnolia st", city: "Lakewood", state: "CO", zip: "80022")
+        pet_1 = shelter_1.pets.create(image: "https://dogtime.com/assets/uploads/gallery/austalian-shepherd-dog-breed-pictures/10-threequarters.jpg",
+                          name: "Tony",
+                          approximate_age: "2",
+                          sex: "male",
+                          description: "He is just adorable!")
+        pet_2 = shelter_1.pets.create(image: "https://dogtime.com/assets/uploads/gallery/german-shorthaired-pointer-dogs-and-puppies/german-shorthaired-pointer-dogs-puppies-3.jpg",
+                                      name: "Isabell",
+                                      approximate_age: "5",
+                                      sex: "female",
+                                      description: "Just the cutest!")
+        visit "/shelters/#{shelter_1.id}/pets"
+
+        expect(page).to have_content("This shelter houses 2 pets")
+
+        within("#pet_#{pet_2.id}") do
+          click_link("delete pet")
+        end
+
+        expect(current_path).to eq("/shelters/#{shelter_1.id}/pets")
+        expect(page).to have_content("This shelter houses 1 pet")
+      end
+    end
+
   end
 end
