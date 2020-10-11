@@ -1,3 +1,4 @@
+<br>
 <%= form_tag "/pets/#{params[:pet_id]}/pets", method: :patch do %>
   <%= label_tag :image %><br>
   <%= text_field_tag :image, @pet.image %><br>
