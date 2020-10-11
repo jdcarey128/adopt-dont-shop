@@ -1,0 +1,18 @@
+.navbar li {
+  float: left;
+  display: inline-block;
+  list-style-type: none;
+  padding: 10px;
+}
+
+li {
+  list-style-type: none;
+}
+
+h1, h2 {
+  color: rgb(20, 51, 20)
+}
+
+a {
+  color: rgb(20, 51, 20)
+}
