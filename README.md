@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project:
+- Completes up through user story 22
+- All RSpec tests passing
+- 100% test coverage
+- Adds simple webpage styling
+- Contains DB seed data
+- Is biased towards dogs
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Moving forward, I would like to:
+- Complete all extension stories 
+- Create an additional ShelterPetsController class to better follow RUBY & RESTful convention
+- Add additional webpage styling
