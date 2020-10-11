@@ -7,11 +7,11 @@
 <% @pets.each do |pet| %>
   <div id="pet_<%= pet.id %>">
     <img src= <%= "#{pet.image}"%> alt= <%= "#pet.name" %> width="300px"><br>
-    <%= "Name: " + pet.name %><br>
+    <%= "Name: " %> <%= link_to "#{pet.name}", "/pets/#{pet.id}" %><br>
     <%= "Description: " + pet.description %><br>
     <%= "Approximate age: " + pet.approximate_age %><br>
     <%= "Sex: " + pet.sex %><br>
-    <%= "Shelter: " + pet.shelter.name %><br>
+    <%= "Shelter: " %> <%= link_to "#{pet.shelter.name}", "/shelters/#{pet.shelter_id}" %><br>
     <%= link_to "edit pet", "/shelters/#{pet.shelter_id}/pets/#{pet.id}/edit" %><br>
     <%= link_to "delete pet", "/shelters/#{pet.shelter_id}/pets?pet_id=#{pet.id}", method: :delete %>
   </div><br><br>
