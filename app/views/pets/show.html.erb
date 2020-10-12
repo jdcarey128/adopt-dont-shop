@@ -5,7 +5,7 @@
 <%= "Description: " + @pet.description %><br>
 <%= "Approximate age: " + @pet.approximate_age %><br>
 <%= "Sex: " + @pet.sex %><br>
-<%= "Shelter: " + @pet.shelter.name %><br>
+<%= "Shelter: " %> <%= link_to "#{@pet.shelter.name}", "/shelters/#{@pet.shelter_id}" %><br>
 <%= "Adoption status: " + @pet.adoption_status%><br>
 
 <%= link_to "Delete Pet", "/pets/#{@pet.id}", method: :delete %>

@@ -71,5 +71,18 @@ RSpec.describe "As a visitor" do
       expect(page).to_not have_content("5")
       expect(page).to_not have_content("female")
     end
+
+    it "I can access the pet's shelter's show page" do
+      shelter_1 = Shelter.create(name: "Colorado Cares", address: "867 magnolia st", city: "Lakewood", state: "CO", zip: "80022")
+      pet_1 = shelter_1.pets.create(image: "https://dogtime.com/assets/uploads/gallery/austalian-shepherd-dog-breed-pictures/10-threequarters.jpg",
+                        name: "Tony",
+                        approximate_age: "2",
+                        sex: "male",
+                        description: "My favorite.")
+      visit "/pets/#{pet_1.id}"
+      expect(page).to have_content("#{shelter_1.name}")
+      click_on("#{shelter_1.name}")
+      expect(current_path).to eq("/shelters/#{shelter_1.id}")
+    end
   end
 end
