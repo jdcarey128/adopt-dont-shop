@@ -79,4 +79,9 @@ class SheltersController < ApplicationController
     params.permit(:image, :name, :description, :approximate_age, :sex, :shelter_id)
   end
 
+  def shelter_params
+    params.require(:shelter).permit(:image, :name, :description, :approximate_age, :sex, :shelter_id)
+  end
+
+
 end
